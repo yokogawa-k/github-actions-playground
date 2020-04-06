@@ -16,7 +16,7 @@ jobs:
       with:
         go-version: 1.x
     - name: test
-      run: go test -coverprofile coverage.out -covermode atomic ./golang/...
+      run: go test -coverprofile coverage.out -covermode atomic ./golang/..
     - name: golangci-lint
       uses: docker://reviewdog/action-golangci-lint:v1.1.7
       with:
