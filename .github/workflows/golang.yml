@@ -22,6 +22,6 @@ jobs:
         GOROOT: /go
       with:
         github_token: ${{ secrets.github_token }}
-        golangci_lint_flags: "-mod=readonly --config=./golang/.golangci.yml ./golang"
+        golangci_lint_flags: "--modules-download-mode=readonly --config=./golang/.golangci.yml ./golang"
         level: info
 
