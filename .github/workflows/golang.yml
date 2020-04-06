@@ -4,6 +4,8 @@ jobs:
   test:
     name: runner / go test and coverage
     runs-on: ubuntu-latest
+    env:
+      GO111MODULEi: on
     steps:
     - name: checkout
       uses: actions/checkout@v1
