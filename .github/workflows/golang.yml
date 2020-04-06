@@ -18,6 +18,8 @@ jobs:
       working-directory: ./golang
     - name: golangci-lint
       uses: docker://reviewdog/action-golangci-lint:v1.1.7
+      env:
+        GOROOT: /go
       with:
         github_token: ${{ secrets.github_token }}
         golangci_lint_flags: "--config=./golang/.golangci.yml ./golang"
