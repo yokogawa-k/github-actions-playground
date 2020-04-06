@@ -18,7 +18,7 @@ jobs:
     - name: golangci-lint
       uses: docker://reviewdog/action-golangci-lint:v1.1.7
       env:
-        GOROOT: /go
+        GOROOT: /usr/local/go
       with:
         github_token: ${{ secrets.github_token }}
         golangci_lint_flags: "--modules-download-mode=readonly --config=.golangci.yml"
