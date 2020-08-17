@@ -2,7 +2,7 @@ name: golang test
 on: [pull_request]
 jobs:
   test:
-    name: runner / go test and coverage
+    name: new golangci-lint
     runs-on: ubuntu-latest
     steps:
     - name: checkout
@@ -16,7 +16,7 @@ jobs:
     - name: test
       run: go test ./...
     - name: golangci-lint
-      uses: reviewdog/action-golangci-lint@v1
+      uses: reviewdog/action-golangci-lint@v1.11
       with:
         golangci_lint_flags: "--modules-download-mode=readonly --config=.golangci.yml"
         level: info
@@ -35,7 +35,7 @@ jobs:
     - name: test
       run: go test ./...
     - name: golangci-lint
-      uses: docker://reviewdog/action-golangci-lint:v1.10.1
+      uses: reviewdog/action-golangci-lint@v1.10
       with:
         github_token: ${{ secrets.github_token }}
         golangci_lint_flags: "--modules-download-mode=readonly --config=.golangci.yml"
